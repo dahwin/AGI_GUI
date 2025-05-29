@@ -1,0 +1,4 @@
+--add-data "./asset/user.png;." --add-data "./asset/queendahyun.png;." --add-data "./asset/logout.png;."  --add-data "./asset/send.svg;."
+
+
+pyinstaller -w --add-data "user.png;." --add-data "queendahyun.png;." --add-data "logout.png;."  --add-data "send.svg;." qd.py

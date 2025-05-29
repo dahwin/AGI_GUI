@@ -1,0 +1,6 @@
+dahwin/
+dist/
+build/
+*.exe
+*.zip
+*.rar

@@ -1,0 +1,14 @@
+pip install pycountry cryptography aiohttp psutil sseclient httpx
+
+
+
+
+
+
+
+
+pyinstaller -F -w --onefile --icon=queendahyun.ico queendahyun.py
+
+pyinstaller -F -w  --onefile queendahyunserver.py
+
+pyinstaller --noconsole --onefile --windowed qd.py
