@@ -506,11 +506,10 @@ class Ui_MainWindow(QMainWindow):
         self.model_combo = QComboBox()
         self.model_combo.setObjectName("model_combo")
         self.model_combo.addItems([
-            "soul_dubu_falcon____(85b_4bit)",
-            "soul_dubu_hummingbird____(10b_fp8)"
+            "SoulDubu-v1",
         ])
         # Set default model
-        self.model_combo.setCurrentText("soul_dubu_falcon____(85b_4bit)")
+        self.model_combo.setCurrentText("SoulDubu-v1")
         input_layout.addWidget(self.model_combo)
 
         right_input_spacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)

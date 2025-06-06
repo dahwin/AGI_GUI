@@ -235,18 +235,36 @@ class FuturisticAuthWindow(QWidget):
                 margin-bottom: 10px;
             }
             QPushButton {
-                padding: 10px 20px;
+                padding: 12px 20px;
                 border: none;
-                border-radius: 15px;
-                background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
-                                            stop:0 #000000, stop:1 #4287f5);
-                color: white;
+                border-radius: 25px;
                 font-weight: bold;
-                margin-bottom: 10px;
+                font-size: 14px;
+                margin: 5px 0px;
+                min-height: 20px;
             }
-            QPushButton:hover {
-                background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
-                                            stop:0 #1c1c1c, stop:1 #5a9aff);
+            QPushButton#primaryButton {
+                background-color: #1d9bf0;
+                color: white;
+            }
+            QPushButton#primaryButton:hover {
+                background-color: #1a8cd8;
+            }
+            QPushButton#secondaryButton {
+                background-color: white;
+                color: #0f1419;
+                border: 1px solid #cfd9de;
+            }
+            QPushButton#secondaryButton:hover {
+                background-color: #f7f9fa;
+            }
+            QPushButton#tertiaryButton {
+                background-color: transparent;
+                color: #1d9bf0;
+                border: 1px solid #1d9bf0;
+            }
+            QPushButton#tertiaryButton:hover {
+                background-color: rgba(29, 155, 240, 0.1);
             }
             QRadioButton, QCheckBox {
                 color: white;
@@ -257,6 +275,7 @@ class FuturisticAuthWindow(QWidget):
     def create_login_widget(self):
         widget = QWidget()
         layout = QVBoxLayout()
+        layout.setSpacing(15)
 
         self.login_email = QLineEdit()
         self.login_email.setPlaceholderText("Email")
@@ -265,17 +284,23 @@ class FuturisticAuthWindow(QWidget):
         self.login_password.setEchoMode(QLineEdit.EchoMode.Password)
 
         self.remember_me = QCheckBox("Remember Me")
+        self.remember_me.setChecked(True) 
 
-        login_button = QPushButton("Log In")
+        # X.com style buttons
+        login_button = QPushButton("Sign in")
+        login_button.setObjectName("primaryButton")
         login_button.clicked.connect(self.login)
 
-        switch_to_signup = QPushButton("Don't have an account? Sign Up")
-        switch_to_signup.clicked.connect(lambda: self.stacked_widget.setCurrentIndex(1))
-
-        # Add Google Sign-in button
+        # Google Sign-in button with white background
         google_signin_button = QPushButton("Sign in with Google")
+        google_signin_button.setObjectName("secondaryButton")
         google_signin_button.setIcon(QIcon("google.png"))
         google_signin_button.clicked.connect(self.start_google_signin)
+
+        # Switch to signup with tertiary style
+        switch_to_signup = QPushButton("Don't have an account? Sign Up")
+        switch_to_signup.setObjectName("tertiaryButton")
+        switch_to_signup.clicked.connect(lambda: self.stacked_widget.setCurrentIndex(1))
 
         layout.addWidget(self.login_email)
         layout.addWidget(self.login_password)
@@ -352,11 +377,15 @@ class FuturisticAuthWindow(QWidget):
         self.signup_password.setEchoMode(QLineEdit.EchoMode.Password)
         layout.addWidget(self.signup_password)
 
+        # X.com style signup button
         signup_button = QPushButton("Sign Up")
+        signup_button.setObjectName("primaryButton")
         signup_button.clicked.connect(self.signup)
         layout.addWidget(signup_button)
 
-        switch_to_login = QPushButton("Already have an account? Log In")
+        # Switch to login with tertiary style
+        switch_to_login = QPushButton("Already have an account? Sign In")
+        switch_to_login.setObjectName("tertiaryButton")
         switch_to_login.clicked.connect(lambda: self.stacked_widget.setCurrentIndex(0))
         layout.addWidget(switch_to_login)
 
@@ -594,9 +623,11 @@ class FuturisticAuthWindow(QWidget):
             except requests.RequestException:
                 print("Network error while refreshing token")
 
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    app.setAttribute(Qt.ApplicationAttribute.AA_UseSoftwareOpenGL)
-    window = FuturisticAuthWindow()
-    window.show()
-    sys.exit(app.exec())
+
+
+# if __name__ == '__main__':
+#     app = QApplication(sys.argv)
+#     app.setAttribute(Qt.ApplicationAttribute.AA_UseSoftwareOpenGL)
+#     window = FuturisticAuthWindow()
+#     window.show()
+#     sys.exit(app.exec())
