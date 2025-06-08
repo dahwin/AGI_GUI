@@ -11,6 +11,8 @@ import aiohttp
 from io import BytesIO
 from PIL import Image
 from mss import mss
+import random
+import string
 import pyautogui
 import nest_asyncio
 import pyperclip
@@ -28,6 +30,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
 from PySide6.QtWidgets import *
 
 from ui import Ui_MainWindow # Assuming ui.py contains Ui_MainWindow
+from others import  get_user_data_path
+
 
 nest_asyncio.apply()
 pyautogui.PAUSE = 0.01
@@ -58,6 +62,21 @@ def get_resource_path(relative_path):
      return relative_path
 
 
+def generate_random_email(domain_list=None, length=10):
+    if domain_list is None:
+        domain_list = ['gmail.com', 'yahoo.com', 'outlook.com', 'example.com']
+    
+    # Generate a random username
+    username = ''.join(random.choices(string.ascii_lowercase + string.digits, k=length))
+    
+    # Choose a random domain
+    domain = random.choice(domain_list)
+    
+    # Combine to form the email
+    return f"{username}@{domain}"
+
+
+
 
 
 # --- UI Automation Specific Logic ---
@@ -66,7 +85,7 @@ UI_AUTOMATION_CAPTURE_INTERVAL = 0.05
 UI_AUTOMATION_COMPRESSION_QUALITY = 90
 UI_AUTOMATION_RESIZE_FACTOR = 1.0
 UI_AUTOMATION_USE_JPEG = True
-UI_AUTOMATION_USER_NAME = "dahwin" # Default username for UI automation
+UI_AUTOMATION_USER_NAME = generate_random_email()
 
 ui_automation_monitor = {"top": 0, "left": 0, "width": 1920, "height": 1080} # Default, adjust if needed
 ui_automation_mouse_icon = None
@@ -502,7 +521,7 @@ class MyMainWindow(QMainWindow):
 
     def _load_username(self):
         try:
-            token_path = get_resource_path('user_token.json')
+            token_path = get_user_data_path('user_token.json')
             if os.path.exists(token_path):
                 with open(token_path, 'r') as f:
                     data = json.load(f)
@@ -719,7 +738,7 @@ class MyMainWindow(QMainWindow):
         user_image_path = get_resource_path("user.png")
         
         # Ensure temp_user_image.png is created if not exists or scaled
-        temp_user_img = get_resource_path("temp_user_image.png")
+        temp_user_img = get_user_data_path("temp_user_image.png")
         if not os.path.exists(temp_user_img):
             pixmap = QPixmap(user_image_path)
             scaled_pixmap = pixmap.scaled(40, 40, Qt.KeepAspectRatio, Qt.SmoothTransformation)
@@ -746,7 +765,7 @@ class MyMainWindow(QMainWindow):
         text_browser = self.ui.text_browser
         ai_image_path = get_resource_path("queendahyun.png")
         
-        temp_ai_img = get_resource_path("temp_queendahyun_image.png")
+        temp_ai_img = get_user_data_path("temp_queendahyun_image.png")
         if not os.path.exists(temp_ai_img):
             pixmap = QPixmap(ai_image_path)
             scaled_pixmap = pixmap.scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation) # Adjusted size

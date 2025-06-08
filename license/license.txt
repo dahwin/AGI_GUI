@@ -1,0 +1,165 @@
+# QueenDahyun AGI Desktop Application - Proprietary License
+
+**Version 1.0**  
+**Effective Date: June 7, 2025**
+
+---
+
+## 1. DEFINITIONS
+
+**"Application"** means the QueenDahyun AGI desktop software application, including but not limited to the GUI agent system, Soul Dubu AI model interface, real-time learning components, and all associated files, documentation, and updates.
+
+**"License"** means this proprietary software license agreement.
+
+**"Licensor"** means QueenDahyun AGI and its affiliates.
+
+**"You"** or **"Licensee"** means the individual or entity that has acquired a license to use the Application.
+
+**"Authorized Use"** means use of the Application strictly in accordance with the terms of this License and any applicable subscription agreement.
+
+---
+
+## 2. GRANT OF LICENSE
+
+Subject to the terms and conditions of this License, Licensor grants You a limited, non-exclusive, non-transferable, revocable license to:
+
+- Install and use the Application on authorized devices only
+- Access the Application's features according to your subscription tier
+- Receive updates and support as outlined in your service agreement
+
+---
+
+## 3. RESTRICTIONS
+
+You may NOT:
+
+### 3.1 Reverse Engineering
+- Reverse engineer, decompile, disassemble, or attempt to derive the source code
+- Extract or attempt to extract the underlying AI models, algorithms, or training methodologies
+- Analyze the Application's network communications to understand the API structure
+
+### 3.2 Distribution and Modification
+- Distribute, sublicense, rent, lease, or lend the Application
+- Modify, adapt, alter, or create derivative works
+- Remove, alter, or obscure any proprietary notices, labels, or marks
+
+### 3.3 Commercial Restrictions
+- Use the Application to develop competing AI agent software
+- Benchmark or performance test without written permission
+- Use the Application in any manner that violates applicable laws or regulations
+
+### 3.4 Model and Data Protection
+- Extract, copy, or attempt to replicate the Soul Dubu AI model
+- Use the Application to train competing machine learning models
+- Scrape, harvest, or collect data from the Application's responses
+
+---
+
+## 4. INTELLECTUAL PROPERTY RIGHTS
+
+### 4.1 Ownership
+The Application, including all software, AI models, algorithms, user interfaces, and documentation, is and remains the exclusive property of Licensor. This License does not grant You any ownership rights.
+
+### 4.2 Trademarks
+"QueenDahyun AGI," "Soul Dubu," and all related marks are trademarks of Licensor. You may not use these marks without express written permission.
+
+### 4.3 Trade Secrets
+The Application contains valuable trade secrets and proprietary information. You acknowledge that disclosure of such information would cause irreparable harm to Licensor.
+
+---
+
+## 5. SUBSCRIPTION AND PAYMENT TERMS
+
+### 5.1 Service Tiers
+Your access to features is determined by your subscription tier:
+- **SD Hummingbird**: Basic GUI interaction capabilities
+- **SD Falcon**: Advanced GUI interaction with real-time learning
+- **SD Eagle**: Enterprise-level custom solutions
+
+### 5.2 Payment
+Continued use requires valid subscription payments. Failure to pay will result in immediate license termination.
+
+---
+
+## 6. DATA AND PRIVACY
+
+### 6.1 Data Collection
+The Application may collect usage data, performance metrics, and interaction logs to improve service quality and enable real-time learning features.
+
+### 6.2 Screenshot Processing
+Screenshots sent to our servers are processed for GUI interaction purposes. We implement reasonable security measures but cannot guarantee absolute privacy.
+
+### 6.3 Learning Data
+Your usage patterns may contribute to model improvements. Sensitive personal information will be filtered according to our privacy policy.
+
+---
+
+## 7. WARRANTIES AND DISCLAIMERS
+
+### 7.1 Limited Warranty
+Licensor warrants that the Application will perform substantially in accordance with documentation for 30 days from installation.
+
+### 7.2 DISCLAIMER
+EXCEPT AS EXPRESSLY STATED, THE APPLICATION IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND. LICENSOR DISCLAIMS ALL IMPLIED WARRANTIES INCLUDING MERCHANTABILITY, FITNESS FOR PURPOSE, AND NON-INFRINGEMENT.
+
+### 7.3 AI Limitations
+You acknowledge that AI systems may produce errors, and You assume responsibility for validating all automated actions before implementation.
+
+---
+
+## 8. LIMITATION OF LIABILITY
+
+IN NO EVENT SHALL LICENSOR BE LIABLE FOR:
+- Indirect, incidental, special, or consequential damages
+- Loss of profits, data, or business opportunities
+- Damages exceeding the amount paid for the Application in the preceding 12 months
+- Any automated actions taken by the Application on your systems
+
+---
+
+## 9. TERMINATION
+
+### 9.1 Automatic Termination
+This License terminates automatically if You breach any terms or fail to pay subscription fees.
+
+### 9.2 Effect of Termination
+Upon termination, You must immediately cease using the Application and delete all copies from your systems.
+
+### 9.3 Survival
+Sections 3, 4, 7, 8, and 10 survive termination of this License.
+
+---
+
+## 10. GENERAL PROVISIONS
+
+### 10.1 Governing Law
+This License is governed by the laws of [Your Jurisdiction], without regard to conflict of law principles.
+
+### 10.2 Entire Agreement
+This License constitutes the entire agreement and supersedes all prior understandings regarding the Application.
+
+### 10.3 Updates
+Licensor may update this License with notice. Continued use constitutes acceptance of updated terms.
+
+### 10.4 Severability
+If any provision is deemed invalid, the remaining provisions remain in full force and effect.
+
+### 10.5 Export Control
+You agree to comply with all applicable export control laws and regulations.
+
+---
+
+## 11. CONTACT INFORMATION
+
+For licensing questions or permissions:
+**QueenDahyun AGI**  
+Email: [license@queendahyun.site]  
+Website: [https://queendahyun.site]
+
+---
+
+**BY INSTALLING OR USING THE APPLICATION, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THE TERMS OF THIS LICENSE.**
+
+---
+
+*Copyright © 2025 QueenDahyun AGI. All rights reserved.*

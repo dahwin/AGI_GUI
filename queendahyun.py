@@ -52,6 +52,8 @@ class SplashScreen(QMainWindow):
 
         if self.counter > 100:
             self.timer.stop()
+            # self.main = MyMainWindow()
+            # self.main.show()
             if self.is_user_logged_in():
                 self.main = MyMainWindow()
                 self.main.show()
@@ -75,7 +77,7 @@ def main():
     app = QApplication(sys.argv)
     
     # Set app icon
-    app_icon = QIcon("dahyun.png")
+    app_icon = QIcon("queendahyun.png")
     app.setWindowIcon(app_icon)
     
     # Start the subprocess when the app opens (REMOVED)

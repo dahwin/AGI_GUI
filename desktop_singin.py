@@ -9,7 +9,7 @@ from PySide6.QtCore import Qt, QPropertyAnimation,  QDate, QSettings, QTimer,QTh
 from PySide6.QtGui import QLinearGradient, QColor, QPainter, QPen, QFont, QPixmap, QIcon
 import re
 import pycountry
-from others import UserProfileWidget, GradientLabel, check_port
+from others import UserProfileWidget, GradientLabel, check_port, get_user_data_path
 from main_process import MyMainWindow
 from cryptography.fernet import Fernet
 import os
@@ -131,7 +131,7 @@ class FuturisticAuthWindow(QWidget):
         self.settings = QSettings("YourCompany", "FuturisticAuthApp")
         self.encryption_key = self.get_or_create_encryption_key()
         self.fernet = Fernet(self.encryption_key)
-        self.token_file = "user_token.json"
+        self.token_file = get_user_data_path("user_token.json")
         self.offline_mode = False
         self.google_signin_thread = None
         is_open, process_name, pid = check_port(port)
@@ -506,12 +506,14 @@ class FuturisticAuthWindow(QWidget):
         self.user_data_thread.wait()
 
     def cache_user_data(self, user_data):
-        with open('user_data_cache.json', 'w') as f:
+        cache_file_path = get_user_data_path('user_data_cache.json')
+        with open(cache_file_path, 'w') as f:
             json.dump(user_data, f)
 
     def load_cached_user_data(self):
         try:
-            with open('user_data_cache.json', 'r') as f:
+            cache_file_path = get_user_data_path('user_data_cache.json')
+            with open(cache_file_path, 'r') as f:
                 self.current_user = json.load(f)
             self.user_profile_widget.update_profile(self.current_user)
             self.stacked_widget.setCurrentWidget(self.user_profile_widget)
@@ -527,8 +529,8 @@ class FuturisticAuthWindow(QWidget):
         self.offline_mode = False
         if os.path.exists(self.token_file):
             os.remove(self.token_file)
-        if os.path.exists('user_data_cache.json'):
-            os.remove('user_data_cache.json')
+        if os.path.exists(get_user_data_path('user_data_cache.json')):
+            os.remove(get_user_data_path('user_data_cache.json'))
         if hasattr(self, 'main_window'):
             self.main_window.close()
         self.show()  # Show the login window again

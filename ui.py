@@ -22,6 +22,7 @@ import time
 import requests
 from engine import EngineWindow
 from ui_uilts import *
+from others import  get_user_data_path
 import sys
 import httpx
 import asyncio
@@ -342,7 +343,7 @@ class Ui_MainWindow(QMainWindow):
 
         # Get user data from cache
         try:
-            with open('user_data_cache.json', 'r') as f:
+            with open(get_user_data_path('user_data_cache.json'), 'r') as f:
                 user_data = json.load(f)
         except FileNotFoundError:
             QMessageBox.warning(self, "Error", "User data not found.")
@@ -388,8 +389,8 @@ class Ui_MainWindow(QMainWindow):
     def logout(self):
         # Delete user data cache and token
         try:
-            os.remove('user_data_cache.json')
-            os.remove('user_token.json')
+            os.remove(get_user_data_path('user_data_cache.json'))
+            os.remove(get_user_data_path('user_token.json'))
         except FileNotFoundError:
             pass
 

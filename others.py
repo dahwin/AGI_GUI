@@ -11,6 +11,43 @@ import requests
 from PySide6.QtCore import QThread,QThreadPool, QRunnable
 import socket
 import psutil
+import os
+import sys
+
+def get_user_data_path(filename):
+    """
+    Returns the full, platform-specific path to a file in the 
+    application's user data directory. Creates the directory if it doesn't exist.
+    
+    - Windows: C:\\Users\\<user>\\AppData\\Roaming\\QueenDahyun
+    - macOS:   /Users/<user>/Library/Application Support/QueenDahyun
+    - Linux:   /home/<user>/.local/share/QueenDahyun
+    """
+    app_name = "QueenDahyun"
+    
+    # Determine the base path based on the operating system
+    if sys.platform == "win32":
+        # Windows
+        base_path = os.environ.get('APPDATA', os.path.expanduser('~'))
+    elif sys.platform == "darwin":
+        # macOS
+        base_path = os.path.join(os.path.expanduser('~'), 'Library', 'Application Support')
+    else:
+        # Linux and other platforms (XDG standard)
+        base_path = os.environ.get('XDG_DATA_HOME', os.path.join(os.path.expanduser('~'), '.local', 'share'))
+        
+    # Create a specific folder for your app inside the base path
+    app_folder = os.path.join(base_path, app_name)
+    
+    # Ensure this folder exists
+    os.makedirs(app_folder, exist_ok=True)
+    
+    # Return the full path to the requested file
+    return os.path.join(app_folder, filename)
+
+
+
+
 
 def check_port(port):
     # Check if the port is open
