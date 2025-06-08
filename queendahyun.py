@@ -6,7 +6,7 @@ import signal
 from PySide6.QtCore import QTimer, Qt, QPropertyAnimation, QEasingCurve
 from PySide6.QtWidgets import QApplication, QMainWindow, QGraphicsDropShadowEffect, QWidget
 from PySide6.QtGui import QColor, QIcon
-
+from others import get_user_data_path
 # Import your custom modules
 from ui_splash_screen import Ui_SplashScreen
 from main_process import MyMainWindow
@@ -65,7 +65,7 @@ class SplashScreen(QMainWindow):
         self.counter += 1
 
     def is_user_logged_in(self):
-        return os.path.exists('user_token.json')
+        return os.path.exists(get_user_data_path('user_token.json'))
 
     def on_login_successful(self):
         self.auth_window.close()
