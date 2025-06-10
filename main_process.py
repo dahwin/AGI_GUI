@@ -739,6 +739,7 @@ class MyMainWindow(QMainWindow):
         
         # Ensure temp_user_image.png is created if not exists or scaled
         temp_user_img = get_user_data_path("temp_user_image.png")
+        print(temp_user_img)
         if not os.path.exists(temp_user_img):
             pixmap = QPixmap(user_image_path)
             scaled_pixmap = pixmap.scaled(40, 40, Qt.KeepAspectRatio, Qt.SmoothTransformation)
@@ -765,7 +766,8 @@ class MyMainWindow(QMainWindow):
         text_browser = self.ui.text_browser
         ai_image_path = get_resource_path("queendahyun.png")
         
-        temp_ai_img = get_user_data_path("temp_queendahyun_image.png")
+        temp_ai_img = get_user_data_path("temp_qd_image.png")
+        print(temp_ai_img)
         if not os.path.exists(temp_ai_img):
             pixmap = QPixmap(ai_image_path)
             scaled_pixmap = pixmap.scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation) # Adjusted size
@@ -790,7 +792,7 @@ class MyMainWindow(QMainWindow):
         text_browser = self.ui.text_browser
         ai_image_path = get_resource_path("queendahyun.png")
         
-        temp_ai_img = get_resource_path("temp_queendahyun_image.png") # Ensure it's created
+        temp_ai_img = get_user_data_path("temp_qd_image.png")
         if not os.path.exists(temp_ai_img):
             pixmap = QPixmap(ai_image_path)
             scaled_pixmap = pixmap.scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation)

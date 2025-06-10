@@ -184,7 +184,7 @@ class FuturisticAuthWindow(QWidget):
 
         # Image
         image_label = QLabel()
-        pixmap = QPixmap("dahyun.png")  # Make sure this image exists in your directory
+        pixmap = QPixmap("queendahyun.png")  # Make sure this image exists in your directory
         scaled_pixmap = pixmap.scaled(150, 150, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
         image_label.setPixmap(scaled_pixmap)
         image_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
